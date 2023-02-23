@@ -1,6 +1,7 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
+
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
    /*
@@ -17,12 +18,32 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
+    let numberInp= Number(testInput);
+   if(testInput === "" ){
+    return "Empty"
+   }else if(isNaN(numberInp)){
+    return "Not a Number"
+   }else if(isNaN(numberInp) === false){
+    return "Is a Number"
+   }
+
+}
+
+
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+       let pilotStatus = document.geteLementById("pilotStatus");
+       let copilotStatus =document.geteLementById("copilotStatus");
+       let fuelStatus =document.geteLementById("fuelStatus");
+       let cargoStatus =document.geteLementById("cargoStatus");
+       if(validateInput(pilot) === ""){
+        alert("Empty ")
+       }
+       
    
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
-}
+
+
 
 async function myFetch() {
     let planetsReturned;
@@ -35,6 +56,10 @@ async function myFetch() {
 
 function pickPlanet(planets) {
 }
+
+
+
+console.log("helo")
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
