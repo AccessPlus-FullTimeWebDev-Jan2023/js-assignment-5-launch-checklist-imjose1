@@ -9,14 +9,14 @@ window.addEventListener("load", function() {
         listedPlanets = result;
     }).then(function () {
         console.log(listedPlanets);
-        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let randomPlanet = pickPlanet(listedPlanets)
         addDestinationInfo(document, randomPlanet.name,randomPlanet.diameter,randomPlanet.star,randomPlanet.distance,randomPlanet.moons,randomPlanet.image)
         })
         
-
-        
+let list = document.getElementById("faultyItems");
+list.style.visibility = "hidden";     
 let form = document.querySelector("form");
+
 form.addEventListener("submit", function(event) {
     event.preventDefault()
     
@@ -33,7 +33,7 @@ form.addEventListener("submit", function(event) {
     let cargoLevel =cargoL.value
     
     
-     formSubmission(document,null ,pilot,copilot,fuelLevel,cargoLevel)
+     formSubmission(document,list ,pilot,copilot,fuelLevel,cargoLevel)
   });
   
    
