@@ -70,8 +70,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-        return response.json();
-
+        if(response.status >= 400){
+            throw new Error("Not working");
+        }else{
+            return response.json();
+        }
         });
 
     return planetsReturned;
