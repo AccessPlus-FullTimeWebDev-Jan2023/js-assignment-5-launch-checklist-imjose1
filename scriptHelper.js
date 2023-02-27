@@ -58,7 +58,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
                 cargoStatus.innerHTML=`Cargo mass too heavy for launch`;
             }else if(fuelLevel < 10000 && cargoLevel > 10000){
                 launchStatus.style.color ="#C7254E";
-                launchStatus.innerHTML =`Shuttle Not Ready for Launch`;
+                launchStatus.innerHTML =`Shuttle Not Ready for launch`;
                 fuelStatus.innerHTML =`Fuel level too low for launch`;
                 cargoStatus.innerHTML=`Cargo mass too heavy for launch`;
             }else{
